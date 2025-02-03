@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Using for loop:</h2>
+    <ol>
+        {% if data|length > 0 %}
+            {% for num in data %}
+                <li style="color: {% cycle 'black' 'gray' %};">{{num}}</li>
+            {% endfor %}
+        {% endif %}
+    </ol>
+    <hr>
+    <h2>Using filters:</h2>
+    {{data|join:", "}}
+
+{% endblock content %}
